@@ -1,0 +1,586 @@
+import random
+
+questions = [
+    {
+        "question": "What is the central idea of Utilitarianism?",
+        "choices": [
+            "An action is moral if it follows government laws",
+            "An action is moral if it produces the greatest happiness for the greatest number",
+            "An action is moral if it benefits only the person performing it",
+            "An action is moral if it follows tradition"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Why is Utilitarianism considered a consequentialist theory?",
+        "choices": [
+            "It focuses on intentions",
+            "It focuses on rules",
+            "It evaluates actions based on their consequences",
+            "It focuses on religious authority"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which philosopher is associated with the early/classical formulation of Utilitarianism?",
+        "choices": [
+            "Plato",
+            "Thomas Aquinas",
+            "Jeremy Bentham",
+            "Aristotle"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which philosopher emphasized the quality of pleasures?",
+        "choices": [
+            "Bentham",
+            "Mill",
+            "Plato",
+            "Aquinas"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Bentham's approach mainly emphasizes the ______ of pleasure.",
+        "choices": [
+            "quality",
+            "quantity",
+            "morality",
+            "intention"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "What is the purpose of Bentham's Felicific Calculus?",
+        "choices": [
+            "To determine whether a law is constitutional",
+            "To measure factors related to pleasure and pain",
+            "To determine religious beliefs",
+            "To identify the four causes"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "A person experiences extremely strong happiness after winning a competition. Which Felicific Calculus factor is being described?",
+        "choices": [
+            "Duration",
+            "Intensity",
+            "Certainty",
+            "Extent"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "A pleasurable experience lasts for several months. Which factor is most relevant?",
+        "choices": [
+            "Duration",
+            "Propinquity",
+            "Purity",
+            "Extent"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "A student has a 90% chance of receiving a reward after completing a task. Which factor is this?",
+        "choices": [
+            "Intensity",
+            "Certainty",
+            "Fecundity",
+            "Duration"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "A pleasure will happen immediately rather than several years from now. Which factor applies?",
+        "choices": [
+            "Purity",
+            "Extent",
+            "Propinquity",
+            "Fecundity"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "A good decision produces additional good experiences afterward. Which factor describes this?",
+        "choices": [
+            "Fecundity",
+            "Certainty",
+            "Duration",
+            "Intensity"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "A pleasure is followed by pain. Which Felicific Calculus factor considers this?",
+        "choices": [
+            "Extent",
+            "Purity",
+            "Duration",
+            "Propinquity"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "A government decision benefits 10 million people. Which factor concerns the number of people affected?",
+        "choices": [
+            "Certainty",
+            "Fecundity",
+            "Extent",
+            "Intensity"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which statement correctly compares Bentham and Mill?",
+        "choices": [
+            "Bentham focuses on quality while Mill focuses only on quantity",
+            "Bentham focuses on quantity while Mill gives importance to quality",
+            "Both reject pleasure completely",
+            "Mill focuses only on physical pleasure"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "According to Mill, which is an example of a higher pleasure?",
+        "choices": [
+            "Eating candy",
+            "Sleeping",
+            "Intellectual activity",
+            "Watching random entertainment"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Why does Mill distinguish between higher and lower pleasures?",
+        "choices": [
+            "Some pleasures involve higher human capacities",
+            "Physical pleasures are always immoral",
+            "Intellectual activities never produce happiness",
+            "Pleasure should never be considered in morality"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "A student chooses to study a difficult subject instead of playing games because it contributes to long-term development. This best reflects Mill's idea of:",
+        "choices": [
+            "Lower pleasure",
+            "Higher pleasure",
+            "Extent",
+            "Human law"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is a strength of Utilitarianism?",
+        "choices": [
+            "It ignores consequences",
+            "It promotes consideration of the common good",
+            "It always protects minorities",
+            "It rejects happiness"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which is a major criticism of Utilitarianism?",
+        "choices": [
+            "It considers consequences",
+            "It promotes welfare",
+            "The majority's benefit may come at the expense of a minority",
+            "It can be applied to difficult decisions"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which criticism concerns the difficulty of determining happiness objectively?",
+        "choices": [
+            "Happiness may be difficult to measure",
+            "Human beings cannot reason",
+            "Laws cannot exist",
+            "Pleasure has no value"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "According to Thomas Aquinas, Natural Law is connected with:",
+        "choices": [
+            "Human Law",
+            "Eternal Law",
+            "Technical Law",
+            "Etiquette"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "How do human beings participate in Eternal Law?",
+        "choices": [
+            "Through physical strength",
+            "Through government authority",
+            "Through reason",
+            "Through wealth"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Natural Law is primarily concerned with:",
+        "choices": [
+            "What is objectively good and worthy of pursuit",
+            "Whatever the government says",
+            "Personal preferences only",
+            "Cultural fashion"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Why is Natural Law considered universal?",
+        "choices": [
+            "It applies only to one culture",
+            "It depends entirely on government laws",
+            "It applies generally to human beings and is accessible through reason",
+            "It applies only to religious leaders"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "A student refuses to cheat even though the teacher will never find out. This demonstrates:",
+        "choices": [
+            "Natural moral awareness",
+            "Human law",
+            "Technical valuation",
+            "Felicific Calculus"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "A person recognizes that stealing is wrong without being directly told by an authority. This illustrates the role of:",
+        "choices": [
+            "Reason and moral awareness",
+            "Propinquity",
+            "Material cause",
+            "Etiquette"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which statement about Natural Law is correct?",
+        "choices": [
+            "It is simply a list of government laws",
+            "It is merely instinct",
+            "It can be recognized through human reason",
+            "It changes whenever a government changes"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which type of law refers to God's divine wisdom and governance of the universe?",
+        "choices": [
+            "Human Law",
+            "Divine Law",
+            "Natural Law",
+            "Eternal Law"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Human participation in Eternal Law through reason refers to:",
+        "choices": [
+            "Natural Law",
+            "Human Law",
+            "Divine Law",
+            "Technical valuation"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which type of law provides special guidance through divine revelation and Sacred Scripture?",
+        "choices": [
+            "Eternal Law",
+            "Natural Law",
+            "Divine Law",
+            "Human Law"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "The Ten Commandments are an example associated with:",
+        "choices": [
+            "Human Law",
+            "Divine Law",
+            "Natural Law only",
+            "Technical valuation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Laws created by governments and human authorities are called:",
+        "choices": [
+            "Eternal Law",
+            "Natural Law",
+            "Divine Law",
+            "Human Law"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "According to Aquinas, law is an ordinance of:",
+        "choices": [
+            "emotion",
+            "reason",
+            "instinct",
+            "pleasure"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "A proper law should be directed toward the:",
+        "choices": [
+            "benefit of one person",
+            "common good",
+            "wealthiest citizens",
+            "strongest individual"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "According to Aquinas, law should be made by someone who has:",
+        "choices": [
+            "care of the community",
+            "the most money",
+            "the most popularity",
+            "the greatest physical strength"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "What does it mean for a law to be promulgated?",
+        "choices": [
+            "It must be kept secret",
+            "It must be made known",
+            "It must benefit only officials",
+            "It must be based on pleasure"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which natural inclination concerns protection and preservation of human life?",
+        "choices": [
+            "Inclination toward reason",
+            "Inclination to preserve life",
+            "Inclination toward entertainment",
+            "Inclination toward wealth"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Reproduction and caring for children are connected to which natural inclination?",
+        "choices": [
+            "Preservation of life",
+            "Reproduce and care for offspring",
+            "Technical valuation",
+            "Higher pleasure"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which natural inclination is particularly unique to human beings?",
+        "choices": [
+            "Eating",
+            "Reproduction",
+            "Reason",
+            "Sleeping"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Seeking truth and making moral decisions are connected to the inclination toward:",
+        "choices": [
+            "reason",
+            "pleasure",
+            "wealth",
+            "physical strength"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Why are the three natural inclinations important?",
+        "choices": [
+            "They provide a foundation for recognizing what is good for human beings",
+            "They replace all government laws",
+            "They eliminate the need for reason",
+            "They focus only on physical pleasure"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Aristotle's concept of telos refers to:",
+        "choices": [
+            "pleasure",
+            "purpose or end",
+            "government law",
+            "divine revelation"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which of the following is NOT one of Aristotle's Four Causes?",
+        "choices": [
+            "Material Cause",
+            "Formal Cause",
+            "Efficient Cause",
+            "Moral Cause"
+        ],
+        "answer": 3
+    },
+    {
+        "question": "Which of the following IS one of Aristotle's Four Causes?",
+        "choices": [
+            "Final Cause",
+            "Social Cause",
+            "Legal Cause",
+            "Pleasure Cause"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "According to Plato's understanding discussed in the reviewer, the Good is:",
+        "choices": [
+            "constantly changing",
+            "based only on personal preference",
+            "an objective and unchanging standard",
+            "determined by government"
+        ],
+        "answer": 2
+    },
+    {
+        "question": "Which type of valuation concerns beauty or artistic appreciation?",
+        "choices": [
+            "Technical valuation",
+            "Aesthetic valuation",
+            "Universal valuation",
+            "Etiquette"
+        ],
+        "answer": 1
+    },
+    {
+        "question": "Which term refers to evaluation related to proper social manners and behavior?",
+        "choices": [
+            "Etiquette",
+            "Aesthetic valuation",
+            "Final Cause",
+            "Natural Law"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which of the following is an example of a Primary Precept?",
+        "choices": [
+            "Preserving human life",
+            "Choosing a favorite color",
+            "Buying expensive clothing",
+            "Watching entertainment"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Natural Law is connected to universal human rights because both can involve:",
+        "choices": [
+            "human dignity and universal moral principles",
+            "personal entertainment",
+            "government popularity",
+            "physical pleasure only"
+        ],
+        "answer": 0
+    },
+    {
+        "question": "Which document is specifically mentioned in the reviewer in connection with Natural Law and universal human rights?",
+        "choices": [
+            "Magna Carta",
+            "Universal Declaration of Human Rights",
+            "Constitution of Rome",
+            "Code of Hammurabi"
+        ],
+        "answer": 1
+    }
+]
+
+
+# --------------------------------------------------
+# RANDOMIZE QUESTIONS
+# --------------------------------------------------
+
+random.shuffle(questions)
+
+score = 0
+total = len(questions)
+
+print("=" * 60)
+print("              GENED 8 MOCK MIDTERM EXAM")
+print("=" * 60)
+print("50 Questions | Multiple Choice")
+print("Passing Score: 38/50")
+print("=" * 60)
+
+input("\nPress ENTER to start the exam...")
+
+# --------------------------------------------------
+# EXAM
+# --------------------------------------------------
+
+for number, q in enumerate(questions, start=1):
+
+    # Keep track of the correct answer before shuffling
+    correct_answer = q["choices"][q["answer"]]
+
+    # Shuffle choices
+    choices = q["choices"].copy()
+    random.shuffle(choices)
+
+    print("\n" + "-" * 60)
+    print(f"Question {number}/{total}")
+    print("-" * 60)
+    print(q["question"])
+
+    letters = ["A", "B", "C", "D"]
+
+    for i, choice in enumerate(choices):
+        print(f"{letters[i]}. {choice}")
+
+    # Get answer
+    while True:
+        user_answer = input("\nYour answer (A/B/C/D): ").upper().strip()
+
+        if user_answer in letters:
+            break
+
+        print("Invalid answer. Please choose A, B, C, or D.")
+
+    selected_index = letters.index(user_answer)
+    selected_answer = choices[selected_index]
+
+    # Check answer
+    if selected_answer == correct_answer:
+        score += 1
+        print("✓ CORRECT!")
+    else:
+        print("✗ WRONG!")
+        print(f"Correct answer: {correct_answer}")
+
+
+# --------------------------------------------------
+# FINAL RESULT
+# --------------------------------------------------
+
+print("\n" + "=" * 60)
+print("                  EXAM FINISHED")
+print("=" * 60)
+
+print(f"Your score: {score}/{total}")
+
+if score >= 38:
+    print("\nPASSED")
+    print("Congratulations! You passed the mock exam.")
+else:
+    print("\nFAILED")
+    print("You did not reach the passing score of 38.")
+
+print("=" * 60)
